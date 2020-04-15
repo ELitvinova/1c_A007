@@ -1,7 +1,7 @@
 from random import shuffle
 
-HEAP_N = 3
-CARD_N = 4
+HEAP_N = 8
+CARD_N = 9
 # correct sequence of cards
 PAFF = list(range(CARD_N-1, -1, -1))
 path = []
@@ -84,9 +84,6 @@ if __name__ == '__main__':
     cards = list(range(CARD_N)) * HEAP_N
     path = []
     shuffle(cards)
-    # cards = [3, 2, 1, 0]*3
     cards = [cards[i * CARD_N: i * CARD_N + CARD_N] for i in range(HEAP_N)]
-    # print(cards)
     state = State(cards)
-    # print(state)
     print(check(state))
